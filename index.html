@@ -1,472 +1,934 @@
 <!DOCTYPE html>
+
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SARANA TEKNIK MANDIRI</title>
-  <style>
-.produk-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-  
-    .btn-wa {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 28px;
-  background: linear-gradient(180deg, #2ee66b, #25D366);
-  color: #ffffff;
-  font-weight: bold;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 12px;
-  box-shadow: 0 6px 0 #1da851;
-  transition: all 0.15s ease;
-}
-
-.btn-wa:hover {
-  background: linear-gradient(180deg, #34f174, #28e06b);
-}
-
-.btn-wa:active {
-  transform: translateY(4px);
-  box-shadow: 0 2px 0 #1da851;
-}
-
-.btn-wa svg {
-  width: 22px;
-  height: 22px;
-  fill: white;
-}
-
-.btn-wa:hover {
-  background: linear-gradient(180deg, #34f174, #28e06b);
-}
-
-.btn-wa:active {
-  transform: translateY(4px);
-  box-shadow: 0 2px 0 #1da851;
-}
-
-.btn-wa svg {
-  width: 22px;
-  height: 22px;
-  fill: white;
-}
-    .btn-wa-produk:hover {
-      background-color: #20c35b;
-    }
-    .btn-wa-produk:active {
-      transform: translateY(3px);
-      box-shadow: 0 2px 0 #1da851;
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Service AC, cuci AC, isi freon, bongkar pasang, serta jual beli AC bekas dan baru dengan teknisi berpengalaman. Cepat, rapi, bergaransi, dan siap bantu kebutuhan rumah maupun kantor." name="description"/>
+<meta content="#0b1220" name="theme-color"/>
+<title>Sarana Teknik Mandiri — Service &amp; Jual Beli AC</title>
+<style>
+    :root {
+      --bg: #08111f;
+      --surface: rgba(255,255,255,0.78);
+      --surface-strong: rgba(255,255,255,0.96);
+      --surface-dark: #0f172a;
+      --text: #0f172a;
+      --muted: #5b6473;
+      --line: rgba(15, 23, 42, 0.08);
+      --primary: #2563eb;
+      --primary-600: #1d4ed8;
+      --accent: #22c55e;
+      --accent-600: #16a34a;
+      --gold: #f59e0b;
+      --danger-soft: #fff1f2;
+      --success-soft: #ecfdf5;
+      --wa: #25D366;
+      --shadow-1: 0 10px 30px rgba(2, 6, 23, 0.08);
+      --shadow-2: 0 18px 45px rgba(15, 23, 42, 0.12);
+      --radius-sm: 14px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-xl: 36px;
+      --container: 1180px;
+      --header-h: 78px;
+      --grid-gap: clamp(16px, 2vw, 24px);
     }
 
-/* Tombol WhatsApp produk */
-.btn-wa-produk {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 10px 18px;
-  background-color: #25D366;
-  color: #fff;
-  font-weight: bold;
-  font-size: 14px;
-  text-decoration: none;
-  border-radius: 8px;
-  box-shadow: 0 5px 0 #1da851;
-  transition: all 0.15s ease;
-}
-
-.btn-wa-produk:hover {
-  background-color: #20c35b;
-}
-
-.btn-wa-produk:active {
-  transform: translateY(3px);
-  box-shadow: 0 2px 0 #1da851;
-}    
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #333;
-      background-color: #f9f9f9;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(34,197,94,.14), transparent 22%),
+        linear-gradient(180deg, #f8fbff 0%, #f4f7fb 62%, #eef2f8 100%);
+      line-height: 1.6;
     }
-    header {
-      background: #0f62fe;
-      color: #fff;
-      padding: 20px 40px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button { font: inherit; }
+    .container { width: min(var(--container), calc(100% - 32px)); margin-inline: auto; }
+    .section { padding: clamp(72px, 10vw, 108px) 0; scroll-margin-top: calc(var(--header-h) + 20px); }
+    .section--tight { padding-top: 0; }
+    .section-title { margin: 0 0 10px; font-size: clamp(1.75rem, 2.6vw, 2.7rem); line-height: 1.15; letter-spacing: -0.03em; }
+    .section-desc { margin: 0; color: var(--muted); max-width: 68ch; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 16px; padding: 8px 14px;
+      background: rgba(37,99,235,.08); color: var(--primary-600); border-radius: 999px; font-size: .94rem; font-weight: 700;
+      border: 1px solid rgba(37,99,235,.12);
     }
-    header h1 {
-      margin: 0;
-      font-size: 28px;
+    .eyebrow::before { content: ''; width: 8px; height: 8px; border-radius: 999px; background: currentColor; }
+
+    .site-header {
+      position: sticky; top: 0; z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(8, 17, 31, 0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    nav {
-      margin-top: 10px;
+    .site-header__inner {
+      min-height: var(--header-h);
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
     }
-    nav a {
-      color: #fff;
-      margin-right: 20px;
-      font-weight: bold;
-      text-decoration: underline;
-      cursor: pointer;
+    .brand {
+      display: flex; align-items: center; gap: 14px; text-decoration: none; color: #fff;
+      min-width: 0;
     }
-    nav a:hover {
-      color: #ffd700;
+    .brand__mark {
+      width: 48px; height: 48px; border-radius: 16px;
+      background: linear-gradient(135deg, #60a5fa 0%, #2563eb 55%, #22c55e 100%);
+      display: grid; place-items: center; color: #fff; box-shadow: 0 10px 25px rgba(37,99,235,.35);
+      flex: 0 0 auto;
     }
-    section {
-      padding: 60px 40px;
-      background: #fff;
-      margin-bottom: 10px;
-      scroll-margin-top: 120px;
+    .brand__mark svg { width: 26px; height: 26px; }
+    .brand__text { min-width: 0; }
+    .brand__name {
+      font-size: clamp(1rem, 2vw, 1.08rem); font-weight: 800; letter-spacing: .01em; line-height: 1.1;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
+    .brand__tag { color: rgba(255,255,255,.72); font-size: .82rem; margin-top: 4px; }
+
+    .nav {
+      display: flex; align-items: center; gap: 4px;
+    }
+    .nav__list {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 4px; list-style: none; padding: 0; margin: 0;
+    }
+    .nav__link {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 42px; padding: 0 14px; border-radius: 999px; color: rgba(255,255,255,.88);
+      text-decoration: none; font-weight: 600; font-size: .94rem; transition: .25s ease;
+    }
+    .nav__link:hover, .nav__link:focus-visible { background: rgba(255,255,255,.10); color: #fff; }
+    .nav-toggle {
+      display: none; border: 0; border-radius: 14px; width: 46px; height: 46px;
+      color: #fff; background: rgba(255,255,255,.10); cursor: pointer;
+    }
+    .nav-toggle svg { width: 22px; height: 22px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 20px; border-radius: 16px; text-decoration: none;
+      font-weight: 800; letter-spacing: .01em; transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+      border: 1px solid transparent; cursor: pointer;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(1px); }
+    .btn--primary {
+      background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
+      color: #fff; box-shadow: 0 14px 24px rgba(37,99,235,.27);
+    }
+    .btn--primary:hover { background: linear-gradient(180deg, #4b8df7 0%, #2c6cf0 100%); }
+    .btn--ghost {
+      background: rgba(255,255,255,.08); color: #fff; border-color: rgba(255,255,255,.14);
+    }
+    .btn--wa {
+      background: linear-gradient(180deg, #31e66f 0%, var(--wa) 100%);
+      color: #fff; box-shadow: 0 14px 24px rgba(37,211,102,.27);
+    }
+    .btn--wa:hover { background: linear-gradient(180deg, #42ef7d 0%, #26dc6b 100%); }
+    .btn svg { width: 20px; height: 20px; }
+
     .hero {
-      background: #e6f0ff;
-      text-align: center;
-    }
-    .hero h2 {
-      font-size: 32px;
-    }
-    .services, .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #f4f6fb;
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-    }
-    footer {
-      background: #0f62fe;
+      position: relative; overflow: clip; padding: clamp(48px, 8vw, 80px) 0 44px;
       color: #fff;
-      text-align: center;
-      padding: 20px;
-    } 
-
-    .map-link {
-      color: #0f62fe;
-      font-weight: bold;
-      text-decoration: underline;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(96,165,250,.28), transparent 24%),
+        radial-gradient(circle at 90% 30%, rgba(34,197,94,.18), transparent 24%),
+        linear-gradient(135deg, #08111f 0%, #0d1d39 55%, #0d2230 100%);
     }
-    .map-link:hover {
-      color: #ffd700;
+    .hero::after {
+      content: ''; position: absolute; inset: auto 0 0; height: 170px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.12)); pointer-events: none;
     }
-  .contact-link {
-  color: #25D366;
-  font-weight: bold;
-  text-decoration: none;
-}
-.contact-link:hover {
-  text-decoration: underline;
-}
+    .hero__grid {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(24px, 4vw, 40px); align-items: center;
+    }
+    .hero__title {
+      margin: 0 0 18px; font-size: clamp(2.2rem, 5vw, 4.8rem); line-height: .98; letter-spacing: -0.05em; max-width: 12ch;
+    }
+    .hero__title span { color: #91f7b7; }
+    .hero__lead { margin: 0 0 24px; max-width: 62ch; color: rgba(255,255,255,.78); font-size: clamp(1rem, 1.4vw, 1.08rem); }
+    .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 22px; }
+    .hero__micro {
+      display: flex; flex-wrap: wrap; gap: 10px 12px; color: rgba(255,255,255,.76); font-size: .92rem;
+    }
+    .micro-pill {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px;
+      border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.09);
+    }
+    .micro-pill svg { width: 16px; height: 16px; color: #8bffb2; flex: 0 0 auto; }
 
+    .hero-card {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.08));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-xl);
+      padding: clamp(22px, 3vw, 30px);
+      box-shadow: 0 35px 60px rgba(7, 12, 25, 0.35);
+      backdrop-filter: blur(18px);
+    }
+    .hero-card__badge {
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 16px; padding: 8px 12px;
+      background: rgba(34,197,94,.14); border: 1px solid rgba(145,247,183,.18); border-radius: 999px; color: #b1f6c2; font-weight: 700; font-size: .88rem;
+    }
+    .hero-card__title { margin: 0 0 8px; font-size: 1.3rem; }
+    .hero-card__desc { margin: 0 0 18px; color: rgba(255,255,255,.72); }
+    .check-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .check-list li {
+      display: flex; gap: 12px; align-items: flex-start; color: rgba(255,255,255,.86);
+      padding: 12px 14px; background: rgba(255,255,255,.06); border-radius: 18px; border: 1px solid rgba(255,255,255,.08);
+    }
+    .check-list svg { width: 18px; height: 18px; color: #79f2a3; margin-top: 4px; flex: 0 0 auto; }
 
-/* === Responsive Fixes (mobile overflow/offside) === */
-* {
-  box-sizing: border-box;
-}
+    .quick-stats {
+      margin-top: 26px;
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px;
+    }
+    .stat-card {
+      background: var(--surface-strong); border: 1px solid var(--line); border-radius: var(--radius-md);
+      padding: 18px; box-shadow: var(--shadow-1);
+    }
+    .stat-card strong { display: block; font-size: 1.4rem; letter-spacing: -0.03em; }
+    .stat-card span { color: var(--muted); font-size: .92rem; }
 
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+    .trust-strip {
+      margin-top: 30px; padding: 18px 20px; border-radius: 20px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.84);
+    }
+    .trust-strip ul {
+      list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px;
+    }
+    .trust-strip li { display: flex; gap: 10px; align-items: center; font-weight: 600; }
+    .trust-strip svg { width: 18px; height: 18px; color: #8bffb2; flex: 0 0 auto; }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+    .grid-cards { display: grid; gap: var(--grid-gap); }
+    .grid-cards--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-header {
-  padding: 20px 40px;
-}
+    .card {
+      background: var(--surface-strong); border: 1px solid var(--line); border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-1); overflow: hidden;
+    }
+    .card--padded { padding: clamp(18px, 2.2vw, 24px); }
+    .card__media {
+      aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(135deg, #eaf2ff 0%, #f8fbff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .card__media img { width: 100%; height: 100%; object-fit: cover; }
+    .card__content { padding: clamp(18px, 2.2vw, 24px); }
+    .card__title { margin: 0 0 8px; font-size: 1.15rem; letter-spacing: -0.02em; }
+    .card__desc { margin: 0; color: var(--muted); }
+    .icon-box {
+      width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center;
+      background: linear-gradient(135deg, rgba(37,99,235,.12), rgba(34,197,94,.12)); color: var(--primary);
+      margin-bottom: 16px;
+    }
+    .icon-box svg { width: 24px; height: 24px; }
+    .card__footer { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px;
+      background: #f8fbff; border: 1px solid var(--line); color: #334155; font-size: .9rem; font-weight: 700;
+    }
 
-header h1 {
-  font-size: clamp(20px, 4vw, 28px);
-  line-height: 1.25;
-  overflow-wrap: anywhere;
-}
+    .service-highlight {
+      margin-top: 24px; padding: 18px 20px; border-radius: 22px;
+      background: linear-gradient(135deg, #0f172a, #172554); color: #fff; display: grid;
+      grid-template-columns: 1fr auto; gap: 16px; align-items: center;
+      box-shadow: var(--shadow-2);
+    }
+    .service-highlight p { margin: 0; color: rgba(255,255,255,.8); }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-}
+    .price-list {
+      display: grid; grid-template-columns: 1.08fr .92fr; gap: var(--grid-gap); align-items: start;
+    }
+    .price-card {
+      position: relative; background: var(--surface-strong); border: 1px solid var(--line);
+      border-radius: var(--radius-xl); box-shadow: var(--shadow-1); overflow: hidden;
+    }
+    .price-card__head {
+      padding: 24px 24px 18px; background: linear-gradient(135deg, #eff6ff 0%, #f7fbff 60%, #ecfdf5 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .price-card__head h3 { margin: 0 0 8px; font-size: 1.32rem; }
+    .price-card__head p { margin: 0; color: var(--muted); }
+    .price-table {
+      width: 100%; border-collapse: collapse;
+    }
+    .price-table th, .price-table td {
+      padding: 16px 24px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line);
+    }
+    .price-table th { font-size: .88rem; text-transform: uppercase; letter-spacing: .06em; color: #64748b; }
+    .price-table td:last-child { font-weight: 800; color: var(--primary-600); white-space: nowrap; }
+    .price-table tr:last-child td { border-bottom: 0; }
+    .price-note { padding: 0 24px 24px; color: var(--muted); font-size: .92rem; }
+    .editor-note {
+      padding: 20px; border-radius: 22px; background: #0f172a; color: #e2e8f0; position: sticky; top: calc(var(--header-h) + 20px);
+      box-shadow: var(--shadow-2);
+    }
+    .editor-note h3 { margin: 0 0 12px; font-size: 1.2rem; }
+    .editor-note p { margin: 0 0 14px; color: rgba(226,232,240,.8); }
+    .editor-note ul { margin: 0; padding-left: 18px; color: rgba(226,232,240,.88); }
+    .editor-note code {
+      background: rgba(255,255,255,.08); padding: 2px 8px; border-radius: 8px; color: #fff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
 
-nav a {
-  margin-right: 0;
-}
+    .warranty-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--grid-gap); }
+    .warranty-card {
+      padding: clamp(20px,2.6vw,26px); border-radius: var(--radius-lg); box-shadow: var(--shadow-1);
+      border: 1px solid var(--line); background: var(--surface-strong);
+    }
+    .warranty-card--service { background: linear-gradient(135deg, #fff7ed, #ffffff); }
+    .warranty-card--purchase { background: linear-gradient(135deg, #ecfdf5, #ffffff); }
+    .warranty-card__badge {
+      display: inline-flex; align-items: center; gap: 10px; margin-bottom: 12px; padding: 8px 12px;
+      border-radius: 999px; font-size: .88rem; font-weight: 800;
+    }
+    .warranty-card--service .warranty-card__badge { background: #ffedd5; color: #b45309; }
+    .warranty-card--purchase .warranty-card__badge { background: #dcfce7; color: #15803d; }
+    .warranty-card h3 { margin: 0 0 10px; font-size: 1.3rem; }
+    .warranty-card p { margin: 0; color: var(--muted); }
+    .warranty-card ul { margin: 18px 0 0; padding-left: 18px; color: #334155; }
 
-section {
-  padding: 60px 40px;
-}
+    .brands-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); }
+    .brand-card { display: flex; flex-direction: column; justify-content: space-between; min-height: 100%; }
+    .brand-card__title { display: flex; justify-content: space-between; gap: 14px; align-items: center; }
+    .brand-pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 50px; min-height: 40px; padding: 0 12px; border-radius: 12px; background: rgba(37,99,235,.08); color: var(--primary-600); font-weight: 800;
+    }
+    .wa-inline {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 46px; padding: 0 16px; border-radius: 14px; background: #f0fdf4; color: var(--accent-600);
+      text-decoration: none; font-weight: 800; border: 1px solid rgba(34,197,94,.15);
+    }
+    .wa-inline svg { width: 18px; height: 18px; }
 
-.hero h2 {
-  font-size: clamp(24px, 5vw, 32px);
-  line-height: 1.3;
-}
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--grid-gap); }
+    .testimonial blockquote { margin: 0; font-size: 1.02rem; }
+    .stars { display: flex; gap: 4px; color: var(--gold); margin-bottom: 16px; }
+    .testimonial footer { margin-top: 18px; color: var(--muted); font-weight: 700; }
 
-.services, .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
-  gap: 20px;
-}
+    .privacy-layout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--grid-gap); align-items: start; }
+    .privacy-card {
+      padding: clamp(20px,2.6vw,26px); border-radius: var(--radius-lg); background: var(--surface-strong); border: 1px solid var(--line); box-shadow: var(--shadow-1);
+    }
+    .privacy-card h3 { margin: 0 0 14px; font-size: 1.2rem; }
+    .privacy-card p, .privacy-card li { color: var(--muted); }
+    .privacy-card ul { margin: 0; padding-left: 18px; }
+    .privacy-card strong { color: var(--text); }
+    .micro-copy-box {
+      margin-top: 18px; padding: 18px 20px; border-radius: 20px; background: #f8fbff; border: 1px dashed rgba(37,99,235,.25);
+    }
+    .micro-copy-box h4 { margin: 0 0 10px; }
+    .micro-copy-list { display: grid; gap: 12px; margin: 0; padding-left: 18px; }
 
-.services > *, .products > * {
-  min-width: 0;
-}
+    .faq-grid { display: grid; gap: 14px; }
+    details.faq {
+      background: var(--surface-strong); border: 1px solid var(--line); border-radius: 18px; padding: 18px 20px; box-shadow: var(--shadow-1);
+    }
+    details.faq summary { cursor: pointer; font-weight: 800; list-style: none; }
+    details.faq summary::-webkit-details-marker { display: none; }
+    details.faq p { margin: 14px 0 0; color: var(--muted); }
 
-.card {
-  min-width: 0;
-  overflow: hidden;
-}
+    .contact-card {
+      display: grid; grid-template-columns: 1fr .9fr; gap: var(--grid-gap);
+      padding: clamp(22px, 2.8vw, 30px); border-radius: var(--radius-xl);
+      background: linear-gradient(135deg, #0f172a 0%, #10213f 100%); color: #fff; box-shadow: var(--shadow-2);
+      overflow: hidden; position: relative;
+    }
+    .contact-card::after {
+      content: ''; position: absolute; inset: auto -100px -100px auto; width: 260px; height: 260px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(59,130,246,.28), transparent 60%);
+      pointer-events: none;
+    }
+    .contact-card__col > * { position: relative; z-index: 1; }
+    .contact-card h2 { margin: 0 0 10px; font-size: clamp(1.7rem, 3vw, 2.5rem); letter-spacing: -0.04em; }
+    .contact-card p { margin: 0 0 18px; color: rgba(255,255,255,.8); }
+    .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 14px; }
+    .contact-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .contact-list svg { width: 18px; height: 18px; color: #8bffb2; margin-top: 4px; flex: 0 0 auto; }
+    .contact-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+    .contact-note {
+      align-self: stretch; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.08);
+      padding: 18px; border-radius: 22px;
+    }
+    .contact-note h3 { margin: 0 0 10px; font-size: 1.1rem; }
+    .contact-note ul { margin: 0; padding-left: 18px; color: rgba(255,255,255,.86); }
+    .contact-note p { margin: 12px 0 0; color: rgba(255,255,255,.7); font-size: .92rem; }
 
-.services .card img,
-.products .card img,
-.card img {
-  width: 100%;
-  max-width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
+    .site-footer { padding: 26px 0 40px; }
+    .site-footer__inner {
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center;
+      color: #475569; font-size: .94rem;
+    }
+    .footer-links { display: flex; gap: 12px 16px; flex-wrap: wrap; }
+    .footer-links a { color: #334155; text-decoration: none; font-weight: 700; }
+    .footer-links a:hover { color: var(--primary-600); }
 
-.btn-wa {
-  max-width: 100%;
-}
+    .back-to-top {
+      position: fixed; right: 18px; bottom: 18px; width: 50px; height: 50px; border-radius: 16px; border: 0;
+      background: #fff; color: var(--primary-600); box-shadow: var(--shadow-2); display: grid; place-items: center; cursor: pointer;
+      opacity: 0; visibility: hidden; transform: translateY(8px); transition: .22s ease; z-index: 99;
+    }
+    .back-to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
+    .back-to-top svg { width: 22px; height: 22px; }
 
-@media (max-width: 768px) {
-  header {
-    padding: 16px;
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+
+    @media (max-width: 1080px) {
+      .hero__grid,
+      .price-list,
+      .contact-card,
+      .privacy-layout,
+      .brands-grid,
+      .warranty-grid,
+      .testimonial-grid,
+      .grid-cards--3,
+      .grid-cards--4,
+      .trust-strip ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .editor-note { position: static; }
+    }
+
+    @media (max-width: 780px) {
+      :root { --header-h: 72px; }
+      .site-header__inner { gap: 14px; }
+      .nav-toggle { display: inline-grid; place-items: center; flex: 0 0 auto; }
+      .nav {
+        position: absolute; left: 16px; right: 16px; top: calc(100% + 10px);
+        opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px);
+        transition: .24s ease;
+      }
+      .nav.is-open {
+        opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+      }
+      .nav__list {
+        width: 100%; background: rgba(8,17,31,.95); border: 1px solid rgba(255,255,255,.08);
+        border-radius: 24px; padding: 12px; box-shadow: var(--shadow-2); flex-direction: column; align-items: stretch;
+      }
+      .nav__link { justify-content: flex-start; padding-inline: 16px; }
+      .header-cta { display: none; }
+      .hero__grid,
+      .price-list,
+      .warranty-grid,
+      .contact-card,
+      .privacy-layout,
+      .brands-grid,
+      .testimonial-grid,
+      .grid-cards--3,
+      .grid-cards--4,
+      .trust-strip ul,
+      .quick-stats { grid-template-columns: 1fr; }
+      .hero { padding-top: 42px; }
+      .hero__title { max-width: 100%; }
+      .hero-card { order: -1; }
+      .service-highlight { grid-template-columns: 1fr; }
+      .price-table th, .price-table td { padding: 14px 16px; }
+      .site-footer__inner { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(var(--container), calc(100% - 20px)); }
+      .section { padding: 64px 0; }
+      .hero__actions, .contact-actions { flex-direction: column; align-items: stretch; }
+      .btn { width: 100%; }
+      .hero__micro { display: grid; }
+      .micro-pill { justify-content: flex-start; }
+      .brand__tag { display: none; }
+      .brand__mark { width: 44px; height: 44px; border-radius: 14px; }
+      .card__content, .card--padded, .price-card__head, .price-note { padding-inline: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  
+.stat-card { background:#ffffff; color:#0f172a; }
+/* ===== NAVBAR FIX DESKTOP ONLY ===== */
+@media (min-width: 781px) {
+  .brand__text {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.2;
   }
-
-  nav {
-    gap: 8px 14px;
+  .brand__name {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    display: block;
   }
-
-  nav a {
-    font-size: 14px;
-  }
-
-  section {
-    padding: 40px 16px;
-    scroll-margin-top: 100px;
-  }
-
-  .services, .products {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 16px;
-  }
-
-  .services .card img,
-  .products .card img,
-  .card img {
-    height: 200px;
-  }
-
-  .btn-wa {
-    justify-content: center;
-    width: 100%;
-    padding: 12px 18px;
+  .brand__tag {
+    margin-top: 4px;
+    display: block;
   }
 }
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 16px;
-  }
-
-  nav a {
-    font-size: 12px;
-  }
-
-  .hero h2 {
-    font-size: 22px;
-  }
-
-  .services .card img,
-  .products .card img,
-  .card img {
-    height: 180px;
+@media (max-width: 780px) {
+  .brand__name {
+    white-space: nowrap;
   }
 }
 
 </style>
 </head>
 <body>
-  <header>
-    <h1>PUSAT SERVICE & JUAL BELI AC SE-BEKASI</h1>
-    <nav>
-      <a href="#beranda">Beranda</a>
-      <a href="#tentang">Tentang Kami</a>
-      <a href="#layanan">Layanan</a>
-      <a href="#produk">Produk</a>
-      <a href="#kontak">Kontak</a>
-    </nav>
-  </header>
-
-  <section id="beranda" class="hero">
-    <h2>Solusi Perawatan dan Penjualan AC Terpercaya</h2>
-    <p>Kami menyediakan jasa service, perawatan, serta jual beli AC untuk rumah dan kantor.</p>
-
-    <a class="btn-wa" href="https://wa.me/628170038400" target="_blank" rel="noopener noreferrer">
-  <svg viewBox="0 0 32 32">
-    <path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.3c2.3 1.3 5.1 2 7.9 2h.1c8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3zm8.9 22.2c-.4 1-2.2 1.9-3.1 2-0.9.1-1.9.1-3.1-.1-4.6-1.4-7.6-5.4-7.8-5.6-.2-.2-1.8-2.4-1.8-4.6s1.2-3.3 1.6-3.8c.4-.4.8-.5 1.1-.5.3 0 .6 0 .9 0 .3 0 .7-.1 1.1.9.4.9 1.3 3.2 1.4 3.4.1.2.1.5 0 .7-.1.2-.2.4-.4.6-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.2.4.9 1.5 2 2.5 1.4 1.2 2.6 1.6 3 .1.4.2.6.2.8.1.2-.1 1-.4 1.5-.3.5-.6 1-1.3 1.3-.6.3-1.3.7-1.7.7-.4 0-.8.1-1.1.1z"/>
-  </svg>
-  Hubungi Kami
+<header class="site-header" id="top">
+<div class="container site-header__inner">
+<a aria-label="Sarana Teknik Mandiri" class="brand" href="#beranda">
+<span aria-hidden="true" class="brand__mark">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M20.7 7.3a1 1 0 0 0-1.4 0l-2 2V5a1 1 0 1 0-2 0v6.3l-1.6 1.6a4.5 4.5 0 1 0 1.4 1.4l5.6-5.6a1 1 0 0 0 0-1.4ZM9.5 18A2.5 2.5 0 1 1 12 15.5 2.5 2.5 0 0 1 9.5 18ZM7 6h4a1 1 0 1 0 0-2H7a3 3 0 0 0-3 3v8a1 1 0 1 0 2 0V7a1 1 0 0 1 1-1Zm13 10a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-1a1 1 0 1 0-2 0v1a3 3 0 0 0 3 3h11a3 3 0 0 0 3-3v-1a1 1 0 0 0-1-1Z"></path></svg>
+</span>
+<span class="brand__text">
+<strong class="brand__name">SARANA TEKNIK MANDIRI</strong>
+<span class="brand__tag">Service, perawatan, dan jual beli AC</span>
+</span>
 </a>
-  </section>
-
-  <section id="tentang">
-    <h3>Tentang Kami</h3>
-    <p>
-      Usaha ini bergerak di bidang jasa service dan jual beli AC dengan komitmen memberikan
-      pelayanan profesional, cepat, dan terpercaya. Didukung oleh teknisi berpengalaman,
-      kami siap membantu kebutuhan AC pelanggan di berbagai sektor.
-    </p>
-  </section>
-
-  <section id="layanan">
-    <h3>Layanan Kami</h3>
-    <div class="services">
-      <div class="card">
-        <img loading="lazy" src="img/service-ac.jpg" alt="Service AC" />
-        <h4>Service AC</h4>
-        <p>Pemeriksaan dan perbaikan AC agar kembali berfungsi secara optimal.</p>
-      </div>
-      <div class="card">
-        <img loading="lazy" src="img/cuci-ac.jpg" alt="Cuci AC" />
-        <h4>Cuci AC</h4>
-        <p>Membersihkan unit AC untuk menjaga kualitas udara dan efisiensi pendinginan.</p>
-      </div>
-      <div class="card">
-        <img loading="lazy" src="img/pasang-ac.jpg" alt="Pasang AC" />
-        <h4>Pasang & Bongkar AC</h4>
-        <p>Layanan instalasi dan pembongkaran AC secara aman dan rapi.</p>
-      </div>
-      <div class="card">
-        <img loading="lazy" src="img/freon-ac.jpg" alt="Isi Freon AC" />
-        <h4>Isi Freon</h4>
-        <p>Pengisian freon sesuai standar untuk menjaga performa AC.</p>        
-      </div>
-    </div>
-  </section>
-
-  <section id="produk">
-  <h3>Produk AC Berdasarkan Merek</h3>
-  <div class="products">
-
-    <div class="card">
-<img loading="lazy" src="img/produk/Samsung.jpg" alt="AC Samsung" class="produk-img" />    
-      <h4>Samsung</h4>
-      <a class="btn-wa-produk" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20Samsung" target="_blank" rel="noopener noreferrer">
-        Pesan via WhatsApp
+<button aria-controls="site-nav" aria-expanded="false" aria-label="Buka menu navigasi" class="nav-toggle" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2" viewbox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+</button>
+<nav aria-label="Navigasi utama" class="nav" id="site-nav">
+<ul class="nav__list">
+<li><a class="nav__link" href="#beranda">Beranda</a></li>
+<li><a class="nav__link" href="#tentang">Tentang</a></li>
+<li><a class="nav__link" href="#layanan">Layanan</a></li>
+<li><a class="nav__link" href="#harga">Price List</a></li>
+<li><a class="nav__link" href="#garansi">Garansi</a></li>
+<li><a class="nav__link" href="#produk">Produk</a></li>
+<li><a class="nav__link" href="#privasi">Privasi</a></li>
+<li><a class="nav__link" href="#kontak">Kontak</a></li>
+</ul>
+</nav>
+<a aria-label="Hubungi kami lewat WhatsApp" class="btn btn--wa header-cta" href="https://wa.me/628170038400" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 32 32"><path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.3c2.3 1.3 5.1 2 7.9 2h.1c8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3zm8.9 22.2c-.4 1-2.2 1.9-3.1 2-.9.1-1.9.1-3.1-.1-4.6-1.4-7.6-5.4-7.8-5.6-.2-.2-1.8-2.4-1.8-4.6s1.2-3.3 1.6-3.8c.4-.4.8-.5 1.1-.5.3 0 .6 0 .9 0 .3 0 .7-.1 1.1.9.4.9 1.3 3.2 1.4 3.4.1.2.1.5 0 .7-.1.2-.2.4-.4.6-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.2.4.9 1.5 2 2.5 1.4 1.2 2.6 1.6 3 .1.4.2.6.2.8.1.2-.1 1-.4 1.5-.3.5-.6 1-1.3 1.3-.6.3-1.3.7-1.7.7-.4 0-.8.1-1.1.1z"></path></svg>
+        Chat WhatsApp
       </a>
-    </div>
-
-    <div class="card">
-<img loading="lazy" src="img/produk/LG.jpg" alt="AC LG" class="produk-img" />     
-      <h4>LG</h4>
-      <a class="btn-wa-produk" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20LG" target="_blank" rel="noopener noreferrer">
-        Pesan via WhatsApp
-      </a>
-    </div>
-
-    <div class="card">
-<img loading="lazy" src="img/produk/Panasonic.jpg" alt="AC Panasonic" class="produk-img" />     
-      <h4>Panasonic</h4>
-      <a class="btn-wa-produk" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20Panasonic" target="_blank" rel="noopener noreferrer">
-        Pesan via WhatsApp
-      </a>
-    </div>
-
-    <div class="card">
-<img loading="lazy" src="img/produk/Sharp.jpg" alt="AC Sharp" class="produk-img" />     
-      <h4>Sharp</h4>
-      <a class="btn-wa-produk" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20Sharp" target="_blank" rel="noopener noreferrer">
-        Pesan via WhatsApp
-      </a>
-    </div>
-
-    <div class="card">
-<img loading="lazy" src="img/produk/Daikin.jpg" alt="AC Daikin" class="produk-img" />     
-      <h4>Daikin</h4>
-      <a class="btn-wa-produk" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20Daikin" target="_blank" rel="noopener noreferrer">
-        Pesan via WhatsApp
-      </a>
-    </div>
-
-    <div class="card">
-      <h4>Merek Lainnya</h4>
-      <a class="btn-wa-produk" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20merek%20AC%20lainnya" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">
-        Pesan via WhatsApp
-      </a>
-    </div>
-
-  </div>
+</div>
+</header>
+<main>
+<section class="hero" id="beranda">
+<div class="container hero__grid">
+<div>
+<span class="eyebrow">Pusat Service &amp; Jual Beli AC</span>
+<h1 class="hero__title">AC bermasalah? <span>Kami bantu cepat, rapi, dan jelas garansinya.</span></h1>
+<div class="hero__actions">
+<a class="btn btn--wa" href="https://wa.me/628170038400?text=Halo%20Sarana%20Teknik%20Mandiri,%20saya%20ingin%20konsultasi%20layanan%20AC" rel="noopener noreferrer" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 32 32"><path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.3c2.3 1.3 5.1 2 7.9 2h.1c8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3zm8.9 22.2c-.4 1-2.2 1.9-3.1 2-0.9.1-1.9.1-3.1-.1-4.6-1.4-7.6-5.4-7.8-5.6-.2-.2-1.8-2.4-1.8-4.6s1.2-3.3 1.6-3.8c.4-.4.8-.5 1.1-.5.3 0 .6 0 .9 0 .3 0 .7-.1 1.1.9.4.9 1.3 3.2 1.4 3.4.1.2.1.5 0 .7-.1.2-.2.4-.4.6-.2.2-.4.4-.6.6-.2.2-.4.4-.2.8.2.4.9 1.5 2 2.5 1.4 1.2 2.6 1.6 3 .1.4.2.6.2.8.1.2-.1 1-.4 1.5-.3.5-.6 1-1.3 1.3-.6.3-1.3.7-1.7.7-.4 0-.8.1-1.1.1z"></path></svg>
+              Konsultasi Sekarang
+            </a>
+<a class="btn btn--ghost" href="#harga">Lihat Price List</a>
+</div>
+<div aria-label="Micro-copy keamanan dan kepercayaan" class="hero__micro">
+<span class="micro-pill">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg>
+              Data kontak Anda hanya dipakai untuk follow-up layanan
+            </span>
+<span class="micro-pill">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M7 11V7a5 5 0 0 1 10 0v4"></path><rect height="10" rx="2" width="14" x="5" y="11"></rect><path d="M12 15v2"></path></svg>
+              Chat WhatsApp aman dan tanpa formulir berbelit.
+            </span>
+<span class="micro-pill">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M12 8v4l3 3"></path><circle cx="12" cy="12" r="9"></circle></svg>
+              Estimasi kerja &amp; biaya dikonfirmasi dulu sebelum dikerjakan.
+            </span>
+</div>
+<div aria-label="Highlight keunggulan" class="quick-stats">
+<article class="stat-card">
+<strong>1 Bulan</strong>
+<span>Garansi service &amp; perbaikan</span>
+</article>
+<article class="stat-card">
+<strong>3 Bulan</strong>
+<span>Garansi pembelian &amp; pemasangan unit</span>
+</article>
+<article class="stat-card">
+<strong>Mobile First</strong>
+<span>Tampilan sudah dioptimalkan untuk HP</span>
+</article>
+</div>
+</div>
+<div style="text-align:center;"><img src="https://via.placeholder.com/300x300?text=Owner+Photo" style="border-radius:20px; max-width:300px; margin:auto;"/></div></div>
+<div aria-label="Nilai tambah layanan" class="container trust-strip">
+<ul>
+<li><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m9 12 2 2 4-4"></path></svg>Teknisi rapi &amp; komunikatif</li>
+<li><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m9 12 2 2 4-4"></path></svg>Estimasi jelas sebelum kerja</li>
+<li><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m9 12 2 2 4-4"></path></svg>Bisa untuk rumah &amp; kantor</li>
+<li><svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m9 12 2 2 4-4"></path></svg>CTA WhatsApp lebih terlihat</li>
+</ul>
+</div>
 </section>
-``
-<section id="testimoni" style="background:#f4f6fb;">
-  <h3>Apa Kata Pelanggan Kami</h3>
-  <div class="services">
-    <div class="card">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p>“AC jadi dingin lagi, teknisi datang tepat waktu dan rapi.”</p>
-      <strong>— Budi, Bekasi Kota</strong>
-    </div>
-    <div class="card">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p>“Respon cepat, harga jelas, pelayanan mantap.”</p>
-      <strong>— Rina, Pondok Gede</strong>
-    </div>
-    <div class="card">
-      <p>⭐⭐⭐⭐⭐</p>
-      <p>“Sudah langganan service AC di rumah dan kantor.”</p>
-      <strong>— Andi, Jatiasih</strong>
-    </div>
-  </div>
-</section>  
+<section class="section" id="tentang">
+<div class="container">
+<span class="eyebrow">Tentang Kami</span>
+<h2 class="section-title">Lebih profesional, tetap terasa dekat dan mudah dihubungi</h2>
+<p class="section-desc">Sarana Teknik Mandiri bergerak di bidang service, perawatan, jual beli, serta pemasangan unit AC untuk kebutuhan rumah, kos, ruko, dan kantor. Dengan teknisi berpengalaman, kami mengutamakan respon cepat, pengerjaan rapi, komunikasi jelas, dan layanan yang bertanggung jawab sampai selesai.</p>
+<div class="grid-cards grid-cards--3" style="margin-top: 28px;">
+<article class="card card--padded">
+<div class="icon-box">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"></path></svg>
+</div>
+<h3 class="card__title">Respon cepat</h3>
+<p class="card__desc">Hubungi lewat WhatsApp, jelaskan keluhan, lalu kami bantu arahkan langkah selanjutnya secepat mungkin.</p>
+</article>
+<article class="card card--padded">
+<div class="icon-box">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M20 7h-9"></path><path d="M14 17H5"></path><circle cx="17" cy="17" r="3"></circle><circle cx="7" cy="7" r="3"></circle></svg>
+</div>
+<h3 class="card__title">Pengerjaan rapi</h3>
+<p class="card__desc">Website baru ini juga menekankan citra teknisi yang rapi, detail, dan tidak asal bongkar-pasang.</p>
+</article>
+<article class="card card--padded">
+<div class="icon-box">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M20 6 9 17l-5-5"></path></svg>
+</div>
+<h3 class="card__title">Jelas &amp; bergaransi</h3>
+<p class="card__desc">Calon pelanggan langsung melihat perbedaan garansi service 1 bulan dan garansi pembelian/pemasangan 3 bulan.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="section section--tight" id="layanan">
+<div class="container">
+<span class="eyebrow">Layanan</span>
+<h2 class="section-title">Layanan utama yang disusun lebih rapi dan lebih menjual</h2>
+<p class="section-desc">Setiap layanan diberi hierarchy yang lebih jelas supaya pengunjung cepat paham apa yang Anda kerjakan dan kapan harus menghubungi Anda.</p>
+<div class="grid-cards grid-cards--4" style="margin-top: 28px;">
+<article class="card">
+<div class="card__media"><img alt="Layanan service AC" loading="lazy" src="img/service-ac.jpg"/></div>
+<div class="card__content">
+<h3 class="card__title">Service AC</h3>
+<p class="card__desc">Pemeriksaan, diagnosa, dan perbaikan kerusakan agar unit kembali dingin dan bekerja optimal.</p>
+<div class="card__footer"><span class="chip">Cocok untuk AC tidak dingin / bocor / bermasalah</span></div>
+</div>
+</article>
+<article class="card">
+<div class="card__media"><img alt="Layanan cuci AC" loading="lazy" src="img/cuci-ac.jpg"/></div>
+<div class="card__content">
+<h3 class="card__title">Cuci AC</h3>
+<p class="card__desc">Membersihkan unit indoor dan outdoor untuk menjaga kualitas udara serta performa pendinginan.</p>
+<div class="card__footer"><span class="chip">Perawatan rutin biar AC lebih awet</span></div>
+</div>
+</article>
+<article class="card">
+<div class="card__media"><img alt="Layanan pasang dan bongkar AC" loading="lazy" src="img/pasang-ac.jpg"/></div>
+<div class="card__content">
+<h3 class="card__title">Pasang &amp; Bongkar AC</h3>
+<p class="card__desc">Instalasi baru, pindahan, bongkar-pasang, hingga relokasi unit secara aman, presisi, dan rapi.</p>
+<div class="card__footer"><span class="chip">Untuk rumah, kontrakan, kantor, ruko</span></div>
+</div>
+</article>
+<article class="card">
+<div class="card__media"><img alt="Layanan isi freon AC" loading="lazy" src="img/freon-ac.jpg"/></div>
+<div class="card__content">
+<h3 class="card__title">Isi Freon</h3>
+<p class="card__desc">Pengisian freon sesuai kebutuhan unit dan hasil pengecekan teknisi agar performa tetap stabil.</p>
+<div class="card__footer"><span class="chip">Dilakukan sesuai standar &amp; kondisi unit</span></div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="harga">
+<div class="container">
+<span class="eyebrow">Price List</span>
+<h2 class="section-title">Sudah saya tambahkan coding Price List — Anda tinggal isi harga sendiri</h2>
+<p class="section-desc">Bagian ini sengaja dibuat fleksibel dengan placeholder agar Anda bisa mengganti nominal sewaktu-waktu tanpa bongkar layout.</p>
+<div class="price-list" style="margin-top: 28px;">
+<div class="price-card">
+<div class="price-card__head">
+<h3>Daftar Harga Layanan</h3>
+<p>Gunakan placeholder berikut untuk mengganti harga sesuai kebutuhan bisnis Anda.</p>
+</div>
+<table aria-label="Price list layanan AC" class="price-table">
+<thead>
+<tr>
+<th>Layanan</th>
+<th>Harga</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cuci AC Split</td>
+<td>Rp XXX.XXX</td>
+</tr>
+<tr>
+<td>Service / Cek AC</td>
+<td>Rp XXX.XXX</td>
+</tr>
+<tr>
+<td>Isi Freon</td>
+<td>Rp XXX.XXX</td>
+</tr>
+<tr>
+<td>Tambah Freon</td>
+<td>Rp XXX.XXX</td>
+</tr>
+<tr>
+<td>Pasang AC Baru</td>
+<td>Rp XXX.XXX</td>
+</tr>
+<tr>
+<td>Bongkar AC</td>
+<td>Rp XXX.XXX</td>
+</tr>
+<tr>
+<td>Bongkar + Pasang Kembali</td>
+<td>Rp XXX.XXX</td>
+</tr>
+<tr>
+<td>Perbaikan / Sparepart</td>
+<td>By Check</td>
+</tr>
+</tbody>
+</table>
+<p class="price-note">*Harga di atas masih placeholder. Anda tinggal edit teks <strong>Rp XXX.XXX</strong> sesuai tarif aktual. Jika ingin, section ini juga bisa dibagi per kapasitas PK atau per jenis layanan.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section section--tight" id="garansi">
+<div class="container">
+<span class="eyebrow">Garansi</span>
+<h2 class="section-title">Garansi dibuat tegas dan gampang dipahami</h2>
+<p class="section-desc">Ini penting untuk memperkuat rasa aman calon pelanggan. Saya pisahkan dengan sangat jelas antara garansi service dan garansi pembelian/pemasangan unit.</p>
+<div class="warranty-grid" style="margin-top: 28px;">
+<article class="warranty-card warranty-card--service">
+<span class="warranty-card__badge">Garansi Service • 1 Bulan</span>
+<h3>Garansi 1 bulan untuk pekerjaan service &amp; perbaikan</h3>
+<p>Jika keluhan yang sama muncul kembali dalam masa garansi setelah pekerjaan service dilakukan, pelanggan dapat menghubungi kami untuk tindak lanjut pengecekan sesuai ketentuan layanan.</p>
+<ul>
+<li>Berlaku untuk jenis keluhan/penanganan yang sama sesuai hasil pengerjaan awal.</li>
+<li>Tidak berlaku untuk kerusakan baru di luar hasil service sebelumnya.</li>
+<li>Disarankan menyimpan bukti chat / invoice untuk memudahkan tindak lanjut.</li>
+</ul>
+</article>
+<article class="warranty-card warranty-card--purchase">
+<span class="warranty-card__badge">Pembelian &amp; Pemasangan • 3 Bulan</span>
+<h3>Garansi 3 bulan untuk pembelian unit dan pemasangan</h3>
+<p>Untuk pembelian unit melalui kami dan/atau pemasangan unit oleh teknisi kami, pelanggan mendapatkan masa garansi 3 bulan sejak tanggal transaksi / instalasi selesai dilakukan.</p>
+<ul>
+<li>Mencakup kendala berkaitan dengan unit yang dibeli atau hasil pemasangan oleh tim kami.</li>
+<li>Tidak mencakup kerusakan akibat salah penggunaan, listrik, atau modifikasi pihak lain.</li>
+<li>Detail teknis garansi dapat Anda sesuaikan lagi nanti sesuai kebijakan internal.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="produk">
+<div class="container">
+<span class="eyebrow">Produk</span>
+<h2 class="section-title">Merek AC ditampilkan lebih clean dan lebih enak discan</h2>
+<p class="section-desc">Saya tetap pertahankan konsep branding per merek, tapi ditata ulang biar tampil lebih premium dan CTA WhatsApp-nya lebih konsisten.</p>
+<div class="brands-grid" style="margin-top: 28px;">
+<article class="card card--padded brand-card">
+<div>
+<div class="brand-card__title"><h3 class="card__title">Samsung</h3><span class="brand-pill">SAM</span></div>
+<p class="card__desc">Tersedia untuk pertanyaan unit, service, atau penawaran pemasangan.</p>
+</div>
+<div class="card__footer"><a class="wa-inline" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20Samsung" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" viewbox="0 0 32 32"><path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.3c2.3 1.3 5.1 2 7.9 2h.1c8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3z"></path></svg>Tanya via WhatsApp</a></div>
+</article>
+<article class="card card--padded brand-card">
+<div>
+<div class="brand-card__title"><h3 class="card__title">LG</h3><span class="brand-pill">LG</span></div>
+<p class="card__desc">Untuk kebutuhan pembelian unit, service, maupun konsultasi AC.</p>
+</div>
+<div class="card__footer"><a class="wa-inline" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20LG" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" viewbox="0 0 32 32"><path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.3c2.3 1.3 5.1 2 7.9 2h.1c8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3z"></path></svg>Tanya via WhatsApp</a></div>
+</article>
+<article class="card card--padded brand-card">
+<div>
+<div class="brand-card__title"><h3 class="card__title">Panasonic</h3><span class="brand-pill">PAN</span></div>
+<p class="card__desc">Bisa untuk penawaran unit dan support layanan teknis.</p>
+</div>
+<div class="card__footer"><a class="wa-inline" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20Panasonic" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" viewbox="0 0 32 32"><path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.3c2.3 1.3 5.1 2 7.9 2h.1c8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3z"></path></svg>Tanya via WhatsApp</a></div>
+</article>
+<article class="card card--padded brand-card">
+<div>
+<div class="brand-card__title"><h3 class="card__title">Sharp</h3><span class="brand-pill">SHP</span></div>
+<p class="card__desc">Tanyakan stok, spesifikasi, atau kebutuhan perawatan unit Anda.</p>
+</div>
+<div class="card__footer"><a class="wa-inline" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20Sharp" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" viewbox="0 0 32 32"><path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.3c2.3 1.3 5.1 2 7.9 2h.1c8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3z"></path></svg>Tanya via WhatsApp</a></div>
+</article>
+<article class="card card--padded brand-card">
+<div>
+<div class="brand-card__title"><h3 class="card__title">Daikin</h3><span class="brand-pill">DAI</span></div>
+<p class="card__desc">Cocok untuk konsultasi service, instalasi, hingga pembelian unit.</p>
+</div>
+<div class="card__footer"><a class="wa-inline" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20AC%20Daikin" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" viewbox="0 0 32 32"><path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.3c2.3 1.3 5.1 2 7.9 2h.1c8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3z"></path></svg>Tanya via WhatsApp</a></div>
+</article>
+<article class="card card--padded brand-card">
+<div>
+<div class="brand-card__title"><h3 class="card__title">Merek Lainnya</h3><span class="brand-pill">DLL</span></div>
+<p class="card__desc">Jika merek yang Anda cari belum ada di daftar, langsung konsultasikan lewat WhatsApp.</p>
+</div>
+<div class="card__footer"><a class="wa-inline" href="https://wa.me/628170038400?text=Saya%20ingin%20tanya%20merek%20AC%20lainnya" rel="noopener noreferrer" target="_blank"><svg fill="currentColor" viewbox="0 0 32 32"><path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.4 2.1 7.8L0 32l8.4-2.3c2.3 1.3 5.1 2 7.9 2h.1c8.7 0 15.7-7 15.7-15.7S24.7.3 16 .3z"></path></svg>Tanya via WhatsApp</a></div>
+</article>
+</div>
+</div>
+</section>
+<section class="section section--tight" id="testimoni">
+<div class="container">
+<span class="eyebrow">Testimoni</span>
+<h2 class="section-title">Social proof tetap dipertahankan, tapi dibuat lebih meyakinkan</h2>
+<p class="section-desc">Kalimat testimoni di bawah bisa Anda edit sendiri nanti. Saya bungkus dalam card yang lebih bersih agar mudah dibaca dan terasa lebih profesional.</p>
+<div class="testimonial-grid" style="margin-top: 28px;">
+<article class="card card--padded testimonial">
+<div aria-label="5 dari 5 bintang" class="stars">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<blockquote>“AC jadi dingin lagi, teknisi datang tepat waktu, kerja rapi, dan komunikasinya enak.”</blockquote>
+<footer>— Budi, Bekasi Kota</footer>
+</article>
+<article class="card card--padded testimonial">
+<div aria-label="5 dari 5 bintang" class="stars">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<blockquote>“Respon cepat, harga dijelaskan dulu, jadi rasanya lebih tenang sebelum pengerjaan dimulai.”</blockquote>
+<footer>— Rina, Pondok Gede</footer>
+</article>
+<article class="card card--padded testimonial">
+<div aria-label="5 dari 5 bintang" class="stars">
+<span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+</div>
+<blockquote>“Sudah langganan untuk rumah dan kantor. Sekarang websitenya juga jauh lebih meyakinkan.”</blockquote>
+<footer>— Andi, Jatiasih</footer>
+</article>
+</div>
+</div>
+</section>
+<section class="section" id="privasi">
+<div class="container">
+<span class="eyebrow">Kebijakan Privasi</span>
+<h2 class="section-title">Privacy Policy yang jelas, singkat, dan mudah dipahami</h2>
+<p class="section-desc">Bagian ini saya tulis dengan bahasa yang ramah namun tetap tegas agar pengunjung merasa lebih aman saat menghubungi Anda.</p>
+<div class="privacy-layout" style="margin-top: 28px;">
+<article class="privacy-card">
+<h3>Kebijakan Privasi Sarana Teknik Mandiri</h3>
+<p>Kami menghargai privasi setiap pelanggan. Informasi yang Anda berikan saat menghubungi kami — seperti nama, nomor telepon, alamat, dan detail kebutuhan layanan — digunakan hanya untuk keperluan komunikasi, penjadwalan, survei, pengerjaan, dan tindak lanjut layanan.</p>
+<ul>
+<li><strong>Data yang kami terima:</strong> nama, nomor WhatsApp, alamat/lokasi, dan informasi kebutuhan AC.</li>
+<li><strong>Tujuan penggunaan:</strong> merespons pertanyaan, menjadwalkan kunjungan, memproses layanan, dan memberi informasi terkait pekerjaan.</li>
+<li><strong>Kerahasiaan data:</strong> kami tidak menjual atau menyebarkan data pelanggan ke pihak lain untuk kepentingan pemasaran tanpa izin.</li>
+<li><strong>Penyimpanan informasi:</strong> data hanya disimpan seperlunya untuk administrasi, riwayat layanan, dan tindak lanjut garansi.</li>
+<li><strong>Kontrol pelanggan:</strong> Anda dapat meminta koreksi atau penghapusan data tertentu sejauh memungkinkan sesuai kebutuhan operasional.</li>
+</ul>
+</article>
 
-  <section id="kontak">
-    <h3>Kontak Kami</h3>
-    <p>
-      WhatsApp: <a class="contact-link" href="https://wa.me/628170038400" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"><strong>628170038400</strong></a><br />
-      Maps : <a class="map-link" href="https://maps.app.goo.gl/d9GR5vL4bmfysVn38" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Lihat di Google Maps</a>
-    </p>
-  </section>
+</div>
+</div>
+</section>
+<section class="section section--tight" id="faq">
+<div class="container">
+<span class="eyebrow">FAQ Singkat</span>
+<h2 class="section-title">Pertanyaan umum yang bantu pelanggan cepat ambil keputusan</h2>
+<div class="faq-grid" style="margin-top: 28px;">
+<details class="faq">
+<summary>Apakah saya bisa tanya dulu sebelum booking layanan?</summary>
+<p>Tentu. Pengunjung bisa langsung klik tombol WhatsApp untuk konsultasi awal, tanya kendala, atau minta estimasi layanan.</p>
+</details>
+<details class="faq">
+<summary>Apakah harga di website ini sudah final?</summary>
+<p>Bagian price list saat ini masih placeholder agar Anda bebas atur sendiri nominalnya nanti sesuai kebijakan usaha Anda.</p>
+</details>
+<details class="faq">
+<summary>Bagaimana dengan garansinya?</summary>
+<p>Garansi sudah diperjelas: 1 bulan untuk service/perbaikan, dan 3 bulan untuk pembelian serta pemasangan unit.</p>
+</details>
+</div>
+</div>
+</section>
+<section class="section" id="kontak">
+<div class="container">
+<div class="contact-card">
+<div class="contact-card__col">
+<span class="eyebrow" style="background: rgba(255,255,255,.08); color:#b7cffc; border-color: rgba(255,255,255,.12);">Kontak Kami</span>
+<h2>Siap bantu kebutuhan AC rumah maupun kantor</h2>
+<p>Kalau Anda mau, saya juga bisa lanjut bantu pecah file ini jadi struktur terpisah <strong>HTML + CSS + JS</strong> biar semakin proper untuk deployment/maintenance.</p>
+<ul class="contact-list">
+<li>
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.15 10.8 19.8 19.8 0 0 1 .08 2.09 2 2 0 0 1 2.06 0h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.63 2.63a2 2 0 0 1-.45 2.11L6.1 7.61a16 16 0 0 0 10.29 10.29l1.15-1.14a2 2 0 0 1 2.11-.45c.85.3 1.73.51 2.63.63A2 2 0 0 1 22 16.92Z"></path></svg>
+<span>WhatsApp: <a href="https://wa.me/628170038400" rel="noopener noreferrer" style="color:#fff; font-weight:800;" target="_blank">628170038400</a></span>
+</li>
+<li>
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10Z"></path><circle cx="12" cy="11" r="2.5"></circle></svg>
+<span>Maps: <a href="https://maps.app.goo.gl/d9GR5vL4bmfysVn38" rel="noopener noreferrer" style="color:#fff; font-weight:800;" target="_blank">Lihat lokasi di Google Maps</a></span>
+</li>
+</ul>
+<div class="contact-actions">
+<a class="btn btn--wa" href="https://wa.me/628170038400?text=Halo%20Sarana%20Teknik%20Mandiri,%20saya%20ingin%20booking%20layanan" rel="noopener noreferrer" target="_blank">Booking via WhatsApp</a>
+<a class="btn btn--ghost" href="#privasi">Lihat Kebijakan Privasi</a>
+</div>
+</div>
 
-  <footer>
-    <p>© 2026 Jasa Service dan Jual Beli AC. All rights reserved.</p>
-  </footer>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container site-footer__inner">
+<p>© 2026 Sarana Teknik Mandiri. All rights reserved.</p>
+<div class="footer-links">
+<a href="#harga">Price List</a>
+<a href="#garansi">Garansi</a>
+<a href="#privasi">Kebijakan Privasi</a>
+<a href="#kontak">Kontak</a>
+</div>
+</div>
+</footer>
+<button aria-label="Kembali ke atas" class="back-to-top" type="button">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="m18 15-6-6-6 6"></path></svg>
+</button>
+<script>
+    (function () {
+      const navToggle = document.querySelector('.nav-toggle');
+      const nav = document.querySelector('.nav');
+      const navLinks = document.querySelectorAll('.nav__link');
+      const backToTop = document.querySelector('.back-to-top');
 
-  <script>
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const target = document.getElementById(targetId);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (navToggle && nav) {
+        navToggle.addEventListener('click', () => {
+          const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+          navToggle.setAttribute('aria-expanded', String(!expanded));
+          nav.classList.toggle('is-open');
+        });
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth <= 780 && nav.classList.contains('is-open')) {
+            nav.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!nav || !navToggle) return;
+        const clickedInsideNav = nav.contains(event.target) || navToggle.contains(event.target);
+        if (!clickedInsideNav && nav.classList.contains('is-open') && window.innerWidth <= 780) {
+          nav.classList.remove('is-open');
+          navToggle.setAttribute('aria-expanded', 'false');
         }
       });
-    });
+
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 480) {
+          backToTop.classList.add('is-visible');
+        } else {
+          backToTop.classList.remove('is-visible');
+        }
+      }, { passive: true });
+
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
   </script>
 </body>
 </html>
